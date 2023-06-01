@@ -26,7 +26,7 @@ class SteamshipAgentSkill(FallbackSkill):
     def handle_fallback(self, message):
         utterance = message.data.get("utterance")
 
-        self.speak('Echoing '+utterance)
+        self.speak('Echoing a test: '+utterance)
 
         return True  # Indicate that the utterance was handled
 
