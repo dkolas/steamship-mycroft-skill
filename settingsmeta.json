@@ -1,0 +1,29 @@
+{
+    "skillMetadata": {
+        "sections": [
+            {
+                "name": "Steamship Config",
+                "fields": [
+                    {
+                        "name": "package_instance_invocation_url",
+                        "type": "text",
+                        "label": "Invocation URL for your agent package instance.",
+                        "value": "https://<user_handle>.steamship.run/<worskpace_handle>/<instance_handle>/"
+                    },
+                    {
+                        "name": "steamship_api_key",
+                        "type": "text",
+                        "label": "Your Steamship API key",
+                        "value": ""
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "text",
+                        "label": "An arbitrary user id to use for context matching",
+                        "value": "any_user_id"
+                    }
+                ]
+            }
+        ]
+    }
+}
