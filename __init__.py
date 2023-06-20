@@ -21,7 +21,7 @@ class SteamshipAgentSkill(FallbackSkill):
         # This is good for this example but BAD in general,
         # a fallback prio between 11 and 89 is good for most skills.
 
-        self.register_fallback(self.handle_fallback, 1)
+        self.register_fallback(self.handle_fallback, 100)
         self.audio_service = AudioService(self.bus)
 
         # Any other initialize code goes here
