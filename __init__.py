@@ -44,7 +44,7 @@ class SteamshipAgentSkill(FallbackSkill):
         with self.file_system.open(filename, "wb") as f:
             f.write(response.content)
         self.log.info(f"Wrote data at: {file_path}")
-        self.audioservice.play(tracks=(f"file://{file_path}", "audio/mpeg"))
+        self.audio_service.play(tracks=(f"file://{file_path}", "audio/mpeg"))
 
         return True  # Indicate that the utterance was handled
 
