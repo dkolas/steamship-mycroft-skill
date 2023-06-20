@@ -38,12 +38,12 @@ class SteamshipAgentSkill(FallbackSkill):
         self.log.info(f"Got result URL: {voice_url}")
         response = requests.get(voice_url, headers={"Authorization":f"Bearer {api_key}"})
         filename = time.strftime("%Y%m%d-%H%M%S") + ".mp3"
-        file_path = self.file_system.path.absolute() / filename
+        file_path = self.file_system.path + "/" + filename
 
-        self.log.info(f"Saved data at: {file_path}")
+        self.log.info(f"Writing data at: {file_path}")
         with self.file_system.open(filename, "wb") as f:
             f.write(response.content)
-
+        self.log.info(f"Wrote data at: {file_path}")
         self.audioservice.play(tracks=(f"file://{file_path}", "audio/mpeg"))
 
         return True  # Indicate that the utterance was handled
